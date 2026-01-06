@@ -1,23 +1,4 @@
-<!DOCTYPE html>
-<html lang="th">
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>คริสตจักรสาวกพระเยซูกรุงเทพ | JDM Bangkok Thailand</title>
-    <link rel="icon" type="image/png" href="logo.png" />
-    <meta name="author" content="Natthaphon Jaroenthat" />
-    <meta name="description" content="คริสตจักรสาวกพระเยซูกรุงเทพ (JDM Bangkok Thailand) นมัสการพระเจ้า สร้างสาวก และแบ่งปันความรักของพระเยซูคริสต์" />
 
-    <!-- Open Graph -->
-    <meta property="og:title" content="คริสตจักรสาวกพระเยซูกรุงเทพ | JDM Bangkok Thailand" />
-    <meta property="og:description" content="คริสตจักรสาวกพระเยซูกรุงเทพ (JDM Bangkok Thailand) นมัสการพระเจ้า สร้างสาวก และแบ่งปันความรักของพระเยซูคริสต์" />
-    <meta property="og:image" content="cover.png" />
-    <meta property="og:type" content="website" />
-
-    <!-- Fonts & CSS -->
-    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;500&family=Noto+Sans+KR:wght@400;500&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="style.css" />
-</head>
 <body>
     <header>
         <h1>คริสตจักรสาวกพระเยซูกรุงเทพ</h1>
@@ -32,4 +13,4 @@
     </main>
     
 </body>
-</html>
+
