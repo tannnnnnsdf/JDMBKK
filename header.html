@@ -1,0 +1,156 @@
+<header role="banner">
+  <nav aria-label="Main navigation">
+
+        <a href="/index.html" class="nav-logo">
+            <img src="https://www.tannatthaphon.online/assets/images/faicon.svg"
+            class="nav-logo-icon"
+            alt="โลโก้คริสตจักรสาวกพระเยซูกรุงเทพ">
+            <span class="nav-logo-text">คริสตจักรสาวกพระเยซูกรุงเทพ</span>
+        </a>
+
+        <ul class="nav-menu" id="navMenu">
+            <li><a href="/index.html">หน้าแรก</a></li>
+            <li class="has-dropdown"><a href="#about">เกี่ยวกับเรา</a>
+                <ul class="dropdown-menu">
+                    <li><a href="ความรับผิดชอบและบทบาทหน้าที่ของผู้นำกลุ่มย่อย.html">ประวัติคริสตจักร</a></li>
+                    <li><a href="/indexcopy.html">วิสัยทัศน์</a></li>
+                    <li><a href="/personnel.html">บุคลากร</a></li>
+                    <li><a href="#beliefs">หลักความเชื่อ</a></li>
+                </ul>
+            </li>
+            <li class="has-dropdown">
+                <a href="#services">การนมัสการ</a>
+                <ul class="dropdown-menu">
+                    <li><a href="#sunday">นมัสการวันอาทิตย์</a></li>
+                    <li><a href="#midweek">นมัสการกลางสัปดาห์</a></li>
+                    <li><a href="#youth">นมัสการเยาวชน</a></li>
+                    <li><a href="#prayer">ประชุมอธิษฐาน</a></li>
+                </ul>
+            </li>
+            <li class="has-dropdown">
+                <a href="#ministries">พันธกิจ</a>
+                <ul class="dropdown-menu">
+                    <li><a href="#children">พันธกิจเด็ก</a></li>
+                    <li><a href="#youth-ministry">พันธกิจเยาวชน</a></li>
+                    <li><a href="#outreach">พันธกิจช่วยเหลือ</a></li>
+                    <li><a href="#worship">พันธกิจดนตรี</a></li>
+                </ul>
+            </li>
+            <li><a href="/offering.html">ถวายทรัพย์</a></li>
+            <li><a href="/contact.html">ติดต่อเรา</a></li>
+        </ul>
+        <div class="menu-toggle" id="menuToggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+
+</header>
+    <script>
+    const menuToggle = document.getElementById('menuToggle');
+    const navMenu = document.getElementById('navMenu');
+    const mobileOverlay = document.getElementById('mobileOverlay');
+    const hasDropdownItems = document.querySelectorAll('.has-dropdown');
+    const allLinks = document.querySelectorAll('.nav-menu a');
+
+    // Toggle mobile menu
+    menuToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      menuToggle.classList.toggle('active');
+      navMenu.classList.toggle('active');
+      mobileOverlay.classList.toggle('active');
+      document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : '';
+      
+      // Close all dropdowns when menu closes
+      if (!navMenu.classList.contains('active')) {
+        hasDropdownItems.forEach(item => item.classList.remove('active'));
+      }
+    });
+
+    // Close menu when clicking overlay
+    mobileOverlay.addEventListener('click', () => {
+      menuToggle.classList.remove('active');
+      navMenu.classList.remove('active');
+      mobileOverlay.classList.remove('active');
+      document.body.style.overflow = '';
+      hasDropdownItems.forEach(item => item.classList.remove('active'));
+    });
+
+    // Handle dropdown clicks on mobile
+    hasDropdownItems.forEach(item => {
+      const link = item.querySelector('a');
+      link.addEventListener('click', (e) => {
+        if (window.innerWidth <= 768) {
+          if (!e.target.closest('.dropdown-menu')) {
+            e.preventDefault();
+            
+            // Close other dropdowns
+            hasDropdownItems.forEach(otherItem => {
+              if (otherItem !== item) {
+                otherItem.classList.remove('active');
+              }
+            });
+            
+            // Toggle current dropdown
+            item.classList.toggle('active');
+          }
+        }
+      });
+    });
+
+    // Handle navigation link clicks
+    allLinks.forEach(link => {
+      link.addEventListener('click', (e) => {
+        // If it's a dropdown menu item
+        if (link.closest('.dropdown-menu')) {
+          e.preventDefault();
+          
+          // Remove active from all links
+          allLinks.forEach(l => l.classList.remove('active'));
+          
+          // Add active to clicked link
+          link.classList.add('active');
+          
+          // Close mobile menu
+          if (window.innerWidth <= 768) {
+            menuToggle.classList.remove('active');
+            navMenu.classList.remove('active');
+            mobileOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+            hasDropdownItems.forEach(item => item.classList.remove('active'));
+          }
+        } else if (!link.parentElement.classList.contains('has-dropdown')) {
+          e.preventDefault();
+          
+          // Regular menu item
+          allLinks.forEach(l => l.classList.remove('active'));
+          link.classList.add('active');
+          
+          // Close mobile menu
+          if (window.innerWidth <= 768) {
+            menuToggle.classList.remove('active');
+            navMenu.classList.remove('active');
+            mobileOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+          }
+        }
+      });
+    });
+
+    // Handle window resize
+    let resizeTimer;
+    window.addEventListener('resize', () => {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(() => {
+        if (window.innerWidth > 768) {
+          menuToggle.classList.remove('active');
+          navMenu.classList.remove('active');
+          mobileOverlay.classList.remove('active');
+          document.body.style.overflow = '';
+          hasDropdownItems.forEach(item => item.classList.remove('active'));
+        }
+      }, 250);
+    });
+  </script>

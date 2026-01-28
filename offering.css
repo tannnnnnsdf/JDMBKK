@@ -1,0 +1,45 @@
+
+      
+ .offering-section { max-width: 500px; margin: 40px auto; padding: 0 20px; }
+        
+        /* Tab System */
+        .tab-wrapper { display: flex; background: #eee; border-radius: 12px; padding: 5px; margin-bottom: 25px; }
+        .tab-btn { flex: 1; padding: 12px; border: none; background: none; cursor: pointer; border-radius: 8px; font-family: 'Prompt'; font-weight: 600; transition: 0.3s; color: var(--text-muted); }
+        .tab-btn.active { background: var(--primary-color); color: white; box-shadow: var(--shadow-sm); }
+
+        .tab-content { display: none; background: white; border-radius: 15px; padding: 25px; border: 1px solid var(--border-color); box-shadow: var(--shadow-lg); }
+        .tab-content.active { display: block; animation: fadeIn 0.4s; }
+
+        /* QR Code & Bank Info */
+        .qr-container { text-align: center; }
+        .qr-image-wrapper { 
+            width: 100%; 
+            max-width: 280px; 
+            margin: 20px auto; 
+            padding: 15px;
+            background: #fff;
+            border: 1px solid #eee; 
+            border-radius: 12px;
+            box-shadow: var(--shadow-sm);
+        }
+        .qr-image-wrapper img { width: 100%; height: auto; display: block; }
+        
+        .bank-info { background: var(--bg-alt); padding: 15px; border-radius: 10px; margin-top: 20px; text-align: left; border-left: 4px solid var(--primary-color); }
+        .bank-info p { margin: 8px 0; font-size: 0.95rem; color: var(--text-main); }
+
+        /* Form Styling */
+        .form-compact label { display: block; margin-bottom: 8px; font-weight: 600; color: var(--text-main); font-size: 0.9rem; }
+        .form-compact input { width: 100%; padding: 12px; margin-bottom: 18px; border: 1px solid #ddd; border-radius: 8px; font-family: 'Prompt'; }
+        .btn-submit { 
+            width: 100%; 
+            padding: 16px; 
+            background: whitesmoke; 
+            color: rgb(16, 102, 27); border: none; 
+            border-radius: 8px; 
+            font-weight: 600; 
+            cursor: pointer; font-size: 1rem; transition: 0.2s; }
+        .btn-submit:hover { 
+            background: var(--primary-hover); 
+            transform: translateY(-1px); }
+
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }

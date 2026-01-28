@@ -1,0 +1,229 @@
+.contact-page {
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 50px;
+  margin-top: 30px;
+}
+
+/* ===== ฝั่งข้อมูลติดต่อ ===== */
+.contact-info-box {
+  background: var(--bg-soft);
+  padding: 40px;
+  border-radius: 20px;
+  border-left: 6px solid var(--primary);
+}
+
+.contact-info-box h2 {
+  color: var(--text-main);
+  margin-bottom: 25px;
+}
+
+.info-item {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 25px;
+  align-items: flex-start;
+}
+
+.info-item i {
+  font-size: 1.5rem;
+  color: var(--primary);
+}
+
+.info-item h4 {
+  margin: 0 0 5px 0;
+  color: var(--text-main);
+}
+
+.info-item p,
+.info-item a {
+  margin: 0;
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.prayer-form-box {
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: var(--shadow-medium);
+  border: 1px solid var(--border-color);
+}
+
+.prayer-form-box h3 {
+  color: var(--primary);
+  margin-bottom: 10px;
+}
+
+.prayer-form-box p {
+  color: var(--text-muted);
+  margin-bottom: 25px;
+  font-size: 0.95rem;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  font-size: 1rem;
+}
+
+.form-group textarea {
+  height: 150px;
+  resize: vertical;
+}
+
+.btn-send {
+  width: 100%;
+  padding: 15px;
+  background: var(--primary);
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.btn-send:hover {
+  background: var(--primary-dark);
+  transform: translateY(-2px);
+}
+
+.map-section {
+  background: linear-gradient(
+    180deg,
+    var(--primary) 0%,
+    var(--primary-dark) 100%
+  );
+  padding: 80px 20px;
+  margin-top: 80px;
+}
+
+.map-wrapper {
+  max-width: 1100px;
+  margin: 0 auto;
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 40px;
+  box-shadow: var(--shadow-strong);
+}
+
+.map-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.map-header h2 {
+  font-size: 32px;
+  margin-bottom: 10px;
+  color: var(--primary);
+}
+
+.map-header p {
+  font-size: 15px;
+  color: var(--text-muted);
+}
+
+/* ✅ map-container เวอร์ชันเดียว */
+.map-container {
+  width: 100%;
+  height: 420px;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: inset 0 0 0 1px rgba(0,0,0,0.05);
+}
+
+.map-actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.map-btn {
+  background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+  color: #2c3e50;
+  font-weight: 600;
+  padding: 12px 28px;
+  border-radius: 999px;
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.map-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(218,165,32,0.35);
+}
+@media (max-width: 992px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-info-box {
+    order: 2;
+  }
+
+  .prayer-form-box {
+    order: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .map-container {
+    height: 300px;
+  }
+
+  .map-wrapper {
+    padding: 25px;
+  }
+
+  .map-header h2 {
+    font-size: 26px;
+  }
+}
+.social-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.social-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--text-main);
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+.social-item:hover {
+  color: var(--primary);
+  text-decoration: underline;
+}
+
+.social-icon {
+  width: 20px;
+  height: 20px;
+}

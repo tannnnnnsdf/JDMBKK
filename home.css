@@ -1,0 +1,191 @@
+/* ==================================================
+   HOME PAGE STYLES
+   ================================================== */
+
+/* ---------- HERO ---------- */
+.hero {
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #ffffff;
+
+  background:
+    linear-gradient(
+      rgba(0, 0, 0, 0.55),
+      rgba(0, 0, 0, 0.55)
+    ),
+    url('/DSC4246.webp');
+
+  background-size: cover;
+  background-position: center;
+}
+
+.hero h1 {
+  font-size: var(--h1-size);
+  margin-bottom: var(--space-md);
+}
+
+.hero h1 .block {
+  display: block;
+}
+
+.hero-description {
+  font-size: 1.2rem;
+  max-width: 700px;
+  margin: 0 auto var(--space-lg);
+}
+
+
+/* ---------- CTA BUTTON ---------- */
+.nav-btn-cta {
+  display: inline-block;
+  padding: 15px 40px;
+}
+
+
+/* ---------- SECTION BASE ---------- */
+.section {
+  padding: var(--space-xl) 20px;
+  max-width: var(--container-width);
+  margin: 0 auto;
+}
+
+.section-title {
+  text-align: center;
+  font-size: var(--h2-size);
+  margin-bottom: var(--space-xl);
+}
+
+
+/* ---------- VERSE OF THE WEEK ---------- */
+.verse-box {
+  background: var(--primary-light);
+  padding: var(--space-lg);
+  border-radius: var(--radius-md);
+  text-align: center;
+  border-left: 5px solid var(--primary-color);
+  margin: var(--space-lg) 0;
+}
+
+.verse-label {
+  display: inline-block;
+  color: var(--primary-color);
+  font-weight: 600;
+  margin-bottom: var(--space-sm);
+}
+
+.verse-box blockquote {
+  font-size: 1.4rem;
+  font-style: italic;
+  color: var(--text-main);
+  margin-bottom: var(--space-sm);
+}
+
+
+/* ---------- GRID & CARD ---------- */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--space-lg);
+}
+
+.card {
+  background: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card-content {
+  padding: var(--space-md);
+}
+
+.card-title {
+  margin: 5px 0;
+}
+
+
+/* ---------- CARD LABEL ---------- */
+.card-label {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.card-label.primary {
+  color: var(--primary-color);
+}
+
+.card-label.muted {
+  color: var(--text-muted);
+}
+
+
+/* ---------- SERMON ---------- */
+.sermon-grid {
+  grid-template-columns: 2fr 1fr;
+}
+
+.sermon-title {
+  margin-bottom: var(--space-sm);
+}
+
+.sermon-description {
+  margin-bottom: var(--space-sm);
+}
+
+.sermon-meta {
+  margin-top: 10px;
+}
+
+
+/* ---------- VIDEO ---------- */
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+}
+
+.video-container iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+
+/* ---------- ACTIVITIES ---------- */
+.section-activities {
+  background-color: var(--bg-alt);
+  max-width: 100%;
+}
+
+.activities-inner {
+  max-width: var(--container-width);
+  margin: 0 auto;
+}
+
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 768px) {
+  .hero {
+    min-height: 50vh;
+  }
+
+  .sermon-grid {
+    grid-template-columns: 1fr;
+  }
+}
